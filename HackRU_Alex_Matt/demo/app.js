@@ -62,8 +62,8 @@ app.post('/message', function(request, response) {
     var hasSource = false;
     var tar;
     // make regexs for the source and Target language inputs in tex messages 
-    var reg1 = new RegExp("(Target:en|Target:es|Target:por|Target:fr|Target:ara)",'i');
-    var reg2 = new RegExp("(Source:en|Source:es|Source:por|Source:fr|Source:ara)",'i');
+    var reg1 = new RegExp("(Target:en|Target:es|Target:fr|Target:ara)",'i');
+    var reg2 = new RegExp("(Source:en|Source:es|Source:fr|Source:ara)",'i');
 
     var matchesTarget = req.match(reg1);
     try {
