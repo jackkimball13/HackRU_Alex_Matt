@@ -62,8 +62,8 @@ app.post('/message', function(request, response) {
     var hasSource = false;
     var tar;
     // make regexs for the source and Target language inputs in tex messages 
-    var reg1 = new RegExp("(Target:en|Target:es|Target:pt|Target:fr|Target:ara)",'i');
-    var reg2 = new RegExp("(Source:en|Source:es|Source:pt|Source:fr|Source:ara)",'i');
+    var reg1 = new RegExp("(Target:en|Target:es|Target:por|Target:fr|Target:ara)",'i');
+    var reg2 = new RegExp("(Source:en|Source:es|Source:por|Source:fr|Source:ara)",'i');
 
     var matchesTarget = req.match(reg1);
     try {
@@ -77,7 +77,7 @@ app.post('/message', function(request, response) {
         var twiml = new twilio.TwimlResponse();
         twiml.message(function() {
                     // Watson uses ISO 639-1 expect arabic and egyptian 639-3            
-                    this.body("Include target to translate to 'Target:{langCode=en,es,pt,fr,ara}'");
+                    this.body("Include target to translate to 'Target:{langCode=en,es,fr,ara}'");
                 });
         response.type('text/xml');
         response.send(twiml.toString());
@@ -182,8 +182,8 @@ app.post('/', function(request, response) {
     var hasSource = false;
     var tar;
     // make regexs for the source and Target language inputs in tex messages 
-    var reg1 = new RegExp("(Target:en|Target:es|Target:pt|Target:fr|Target:ara)",'i');
-    var reg2 = new RegExp("(Source:en|Source:es|Source:pt|Source:fr|Source:ara)",'i');
+    var reg1 = new RegExp("(Target:en|Target:es|Target:fr|Target:ara)",'i');
+    var reg2 = new RegExp("(Source:en|Source:es|Source:fr|Source:ara)",'i');
 
     var matchesTarget = req.match(reg1);
     try {
@@ -197,7 +197,7 @@ app.post('/', function(request, response) {
         var twiml = new twilio.TwimlResponse();
         twiml.message(function() {
                 // Watson uses ISO 639-1 expect arabic and egyptian 639-3            
-                    this.body("Include target to translate to 'Target:{langCode=en,es,pt,fr,ara}'");
+                    this.body("Include target to translate to 'Target:{langCode=en,es,fr,ara}'");
                 });
         response.type('text/xml');
         response.send(twiml.toString());
